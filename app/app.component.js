@@ -10,14 +10,14 @@ var core_1 = require("@angular/core");
 var product_service_1 = require("./products/product.service");
 var AppComponent = (function () {
     function AppComponent() {
-        this.pageTitle = "Acme product Management";
+        this.pageTitle = "Acme Product Management";
     }
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'pm-app',
-        template: "\n    <div><h1>{{pageTitle}}</h1>\n     <pm-products></pm-products>\n      </div>\n    ",
+        templateUrl: './app/app.component.html',
         providers: [product_service_1.ProductService]
     })
 ], AppComponent);

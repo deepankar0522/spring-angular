@@ -17,18 +17,20 @@ export class ProductListComponent {
     showImage: boolean = false;
     listFilter: string = '';
     products: IProducts[];
+    errorMessage: string;
 
     constructor(private _productService: ProductService) {
     }
 
     ngOnInit(): void {
-        this.products = this._productService.getProdcts();
+        this._productService.getProducts().subscribe(products => this.products = products,
+                error => this.errorMessage = <any>error);
     }
 
     toggleImage(): void {
         this.showImage = !this.showImage;
     }
-    
+
     onRatingClicked(message: string): void {
         //  console.log(this.selectedRating + " " + message);
         this.selectedRating = message;
