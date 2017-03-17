@@ -9,6 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var ProductListComponent = (function () {
     function ProductListComponent() {
+        this.selectedRating = "Please select Rating";
         this.pageTitle = 'Product List';
         this.imageWidth = 50;
         this.imageMargin = 2;
@@ -69,6 +70,10 @@ var ProductListComponent = (function () {
     }
     ProductListComponent.prototype.toggleImage = function () {
         this.showImage = !this.showImage;
+    };
+    ProductListComponent.prototype.onRatingClicked = function (message) {
+        //  console.log(this.selectedRating + " " + message);
+        this.selectedRating = message;
     };
     return ProductListComponent;
 }());

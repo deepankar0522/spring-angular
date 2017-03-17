@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
 
-import {IProducts} from './products'
+import { IProducts } from './products'
 
 @Component({
     selector: 'pm-products',
@@ -9,6 +9,7 @@ import {IProducts} from './products'
     styleUrls: ['product-style.component.css']
 })
 export class ProductListComponent {
+    selectedRating: string = "Please select Rating";
     pageTitle: string = 'Product List';
     imageWidth: number = 50;
     imageMargin: number = 2;
@@ -68,5 +69,9 @@ export class ProductListComponent {
     ];
     toggleImage(): void {
         this.showImage = !this.showImage;
+    }
+    onRatingClicked(message: string): void {
+      //  console.log(this.selectedRating + " " + message);
+        this.selectedRating = message;
     }
 }
