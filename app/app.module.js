@@ -31,7 +31,7 @@ AppModule = __decorate([
             http_1.HttpModule,
             router_1.RouterModule.forRoot([
                 { path: 'products', component: product_list_component_1.ProductListComponent },
-                { path: 'product/:id', canActivate: [product_guard_service_1.ProductDetailGuard], component: product_detail_component_1.ProductDetail },
+                { path: 'product/:id', canActivate: [product_guard_service_1.ProductDetailGuard], component: product_detail_component_1.ProductDetailComponent },
                 { path: 'welcome', component: welcome_component_1.WelcomeComponent },
                 { path: '', redirectTo: 'welcome', pathMatch: 'full' },
                 { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
@@ -42,7 +42,7 @@ AppModule = __decorate([
             product_list_component_1.ProductListComponent,
             product_filter_pipe_1.ProductFilterPipe,
             star_component_1.StarComponent,
-            product_detail_component_1.ProductDetail,
+            product_detail_component_1.ProductDetailComponent,
             welcome_component_1.WelcomeComponent
         ],
         providers: [product_guard_service_1.ProductDetailGuard],
